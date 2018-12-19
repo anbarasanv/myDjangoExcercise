@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>About Page</h1>
+<p>{{title}}</p>
+<ul>
+{% for item in index %}
+
+{% if item == 5 %}
+   {{forloop.counter}} - Highest: {{item|linenumbers|linebreaks}}
+{% elif item < 3 %}
+    {{forloop.counter}} - Poor ones: {{item|linenumbers|linebreaks}}
+{% else %}
+    {{forloop.counter}} - Average ones: {{item|linenumbers|linebreaks}}
+{% endif %}
+{% endfor %}
+</ul>
+{% endblock %}
